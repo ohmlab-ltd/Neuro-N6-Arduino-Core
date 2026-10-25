@@ -1,0 +1,86 @@
+# Syntax colouring for the A7683E library
+
+# Datatypes and classes (KEYWORD1)
+A7683EClass	KEYWORD1
+A7683EUart	KEYWORD1
+
+# Methods and functions (KEYWORD2)
+a7683e_uart_available	KEYWORD2
+a7683e_uart_begin	KEYWORD2
+a7683e_uart_discard	KEYWORD2
+a7683e_uart_dropped	KEYWORD2
+a7683e_uart_end	KEYWORD2
+a7683e_uart_kernel_hz	KEYWORD2
+a7683e_uart_peek	KEYWORD2
+a7683e_uart_read	KEYWORD2
+a7683e_uart_rx_total	KEYWORD2
+a7683e_uart_write	KEYWORD2
+attachControlPins	KEYWORD2
+attachData	KEYWORD2
+available	KEYWORD2
+availableForWrite	KEYWORD2
+baud	KEYWORD2
+begin	KEYWORD2
+beginOn	KEYWORD2
+discardRx	KEYWORD2
+end	KEYWORD2
+findBaud	KEYWORD2
+flush	KEYWORD2
+flushInput	KEYWORD2
+getIMEI	KEYWORD2
+getLocalIP	KEYWORD2
+getModel	KEYWORD2
+getOperator	KEYWORD2
+httpBegin	KEYWORD2
+httpEnd	KEYWORD2
+httpPost	KEYWORD2
+httpStatus	KEYWORD2
+isAlive	KEYWORD2
+isRegistered	KEYWORD2
+kernelHz	KEYWORD2
+lastLine	KEYWORD2
+netlightName	KEYWORD2
+netlightPeriodMs	KEYWORD2
+netlightPin	KEYWORD2
+netlightState	KEYWORD2
+peek	KEYWORD2
+powerOff	KEYWORD2
+powerOn	KEYWORD2
+pulsePowerKey	KEYWORD2
+pulseReset	KEYWORD2
+pwrkeyPin	KEYWORD2
+queryLine	KEYWORD2
+read	KEYWORD2
+readLine	KEYWORD2
+registrationStatus	KEYWORD2
+reset	KEYWORD2
+resetPin	KEYWORD2
+rxDropped	KEYWORD2
+rxTotal	KEYWORD2
+sendAT	KEYWORD2
+sendATExpect	KEYWORD2
+setApn	KEYWORD2
+setApnAuth	KEYWORD2
+setDebug	KEYWORD2
+setPins	KEYWORD2
+signalDbm	KEYWORD2
+signalQuality	KEYWORD2
+simReady	KEYWORD2
+stream	KEYWORD2
+syncBaud	KEYWORD2
+waitForNetwork	KEYWORD2
+waitForReady	KEYWORD2
+waitPrompt	KEYWORD2
+waitResponse	KEYWORD2
+write	KEYWORD2
+writeBytes	KEYWORD2
+writeRaw	KEYWORD2
+
+# Constants (LITERAL1)
+A7683E_LINE_MAX	LITERAL1
+NETLIGHT_DARK	LITERAL1
+NETLIGHT_DATA	LITERAL1
+NETLIGHT_REGISTERED	LITERAL1
+NETLIGHT_SEARCHING	LITERAL1
+NETLIGHT_SOLID	LITERAL1
+NETLIGHT_UNWIRED	LITERAL1

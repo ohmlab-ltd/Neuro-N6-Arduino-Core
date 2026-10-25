@@ -1,0 +1,14 @@
+# Syntax colouring for the N6Imgproc library
+
+# Methods and functions (KEYWORD2)
+n6_blob_find_rgb888	KEYWORD2
+n6_hue_at_rgb888	KEYWORD2
+n6img_absdiff	KEYWORD2
+n6img_dilate	KEYWORD2
+n6img_erode	KEYWORD2
+n6img_find_components	KEYWORD2
+n6img_histogram	KEYWORD2
+n6img_otsu	KEYWORD2
+n6img_rgb888_to_gray	KEYWORD2
+n6img_statistics	KEYWORD2
+n6img_threshold	KEYWORD2

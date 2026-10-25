@@ -1,0 +1,13 @@
+# Ohm Lab Neuro N6. post_install.sh copies this file to /etc/udev/rules.d.
+# Lets any user open the board and keeps ModemManager off its port.
+#
+#   1209:8008  application
+#   1209:8009  bootloader
+#   cafe:4013  application or bootloader on boards with the first bootloader
+
+SUBSYSTEM=="usb", ATTR{idVendor}=="1209", ATTR{idProduct}=="8008", MODE="0666", TAG+="uaccess", ENV{ID_MM_DEVICE_IGNORE}="1"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1209", ATTR{idProduct}=="8009", MODE="0666", TAG+="uaccess", ENV{ID_MM_DEVICE_IGNORE}="1"
+SUBSYSTEM=="usb", ATTR{idVendor}=="cafe", ATTR{idProduct}=="4013", MODE="0666", TAG+="uaccess", ENV{ID_MM_DEVICE_IGNORE}="1"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="8008", MODE="0666", TAG+="uaccess", ENV{ID_MM_DEVICE_IGNORE}="1"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="8009", MODE="0666", TAG+="uaccess", ENV{ID_MM_DEVICE_IGNORE}="1"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="cafe", ATTRS{idProduct}=="4013", MODE="0666", TAG+="uaccess", ENV{ID_MM_DEVICE_IGNORE}="1"

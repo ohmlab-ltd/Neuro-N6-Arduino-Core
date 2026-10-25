@@ -1,0 +1,16 @@
+# Syntax colouring for the VL53L1CB library
+
+# Datatypes and classes (KEYWORD1)
+VL53L1CB	KEYWORD1
+tofFrame	KEYWORD1
+
+# Methods and functions (KEYWORD2)
+begin	KEYWORD2
+whoami	KEYWORD2
+read	KEYWORD2
+sendNS	KEYWORD2
+
+# Constants (LITERAL1)
+VL53L1CB_DEVICE_ADDRESS	LITERAL1
+VL53L1CB_FRAME_ROWS	LITERAL1
+VL53L1CB_FRAME_COLS	LITERAL1

@@ -1,0 +1,49 @@
+# Text is LF.
+* text=auto eol=lf
+
+*.c    text eol=lf
+*.h    text eol=lf
+*.cpp  text eol=lf
+*.hpp  text eol=lf
+*.ino  text eol=lf
+*.py   text eol=lf
+*.md   text eol=lf
+*.txt  text eol=lf
+*.S    text eol=lf
+*.s    text eol=lf
+*.ld   text eol=lf
+*.yml  text eol=lf
+*.properties text eol=lf
+
+# Windows scripts are CRLF.
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+
+# Binaries.
+*.bin      binary
+*.tflite   binary
+*.onnx     binary
+*.mpool    binary
+*.pdf      binary
+*.png      binary
+*.jpg      binary
+*.chm      binary
+*.lib      binary
+*.a        binary
+*.se       binary
+*.ico      binary
+
+# Not part of the Boards Manager archive
+.github/** export-ignore
+tools/packaging/** export-ignore
+package_ohmlab_index.json export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore
+.editorconfig export-ignore
+.codespellrc export-ignore
+libraries/*/.github/** export-ignore
+extras/postprocess-tests/** export-ignore
+libraries/ArduinoBLE/extras/** export-ignore
+libraries/ArduinoBLE/docs/** export-ignore
+libraries/ArduinoBLE/.codespellrc export-ignore
+libraries/ArduinoBLE/.gitignore export-ignore

@@ -1,0 +1,7 @@
+SPDX-FileCopyrightText: Google LLC <https://github.com/google-ai-edge/mediapipe>
+SPDX-FileCopyrightText: STMicroelectronics
+SPDX-License-Identifier: Apache-2.0
+
+MediaPipe palm detection (full), by Google, as STMicroelectronics packages
+it for ST Edge AI. Licensed under Apache-2.0; the text is in
+LICENSE-Apache-2.0.txt.

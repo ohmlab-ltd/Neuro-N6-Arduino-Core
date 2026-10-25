@@ -1,0 +1,55 @@
+# Syntax colouring for the N6Events library
+
+# Datatypes and classes (KEYWORD1)
+n6_events_state_t	KEYWORD1
+
+# Methods and functions (KEYWORD2)
+n6_events_add_sink	KEYWORD2
+n6_events_begin	KEYWORD2
+n6_events_begin_buf	KEYWORD2
+n6_events_count_boxes	KEYWORD2
+n6_events_current	KEYWORD2
+n6_events_encode_tlv	KEYWORD2
+n6_events_fire	KEYWORD2
+n6_events_last_boxes	KEYWORD2
+n6_events_last_error	KEYWORD2
+n6_events_now	KEYWORD2
+n6_events_push	KEYWORD2
+n6_events_service	KEYWORD2
+n6_events_state	KEYWORD2
+n6_events_stats	KEYWORD2
+n6_motion_gate_begin	KEYWORD2
+n6_motion_gate_reset	KEYWORD2
+n6_motion_gate_score	KEYWORD2
+n6_motion_gate_update	KEYWORD2
+n6_ring_clear	KEYWORD2
+n6_ring_count_window	KEYWORD2
+n6_ring_init	KEYWORD2
+n6_ring_iter_begin	KEYWORD2
+n6_ring_iter_next	KEYWORD2
+n6_ring_pause	KEYWORD2
+n6_ring_paused	KEYWORD2
+n6_ring_push	KEYWORD2
+n6_ring_stats	KEYWORD2
+
+# Constants (LITERAL1)
+N6_EVENTS_CFG_DEFAULT	LITERAL1
+N6_EVENTS_MAX_SINKS	LITERAL1
+N6_EVENTS_TLV_BYTES	LITERAL1
+N6_EVT_IDLE	LITERAL1
+N6_EVT_POST_ROLL	LITERAL1
+N6_EVT_REFRACTORY	LITERAL1
+N6_EVT_SRC_AUDIO	LITERAL1
+N6_EVT_SRC_GPIO	LITERAL1
+N6_EVT_SRC_HOST	LITERAL1
+N6_EVT_SRC_MOTION	LITERAL1
+N6_EVT_SRC_NN	LITERAL1
+N6_EVT_SRC_THERMAL	LITERAL1
+N6_EVT_SRC_TIMER	LITERAL1
+N6_EVT_SRC_TOF	LITERAL1
+N6_EVT_WRITING	LITERAL1
+N6_RING_ALIGN	LITERAL1
+N6_RING_F_META_DROPPED	LITERAL1
+N6_RING_HDR_BYTES	LITERAL1
+N6_RING_MAGIC_REC	LITERAL1
+N6_RING_MAGIC_SKIP	LITERAL1

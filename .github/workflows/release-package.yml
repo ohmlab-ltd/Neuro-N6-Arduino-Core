@@ -1,0 +1,42 @@
+name: Release package
+
+# Builds the Boards Manager archive and index for a tag.
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build archive and index
+        run: |
+          python tools/packaging/build_package.py --out dist
+          mkdir -p /tmp/lint && unzip -q dist/stm32n6-*.zip -d /tmp/lint
+      - name: Lint the platform archive
+        uses: arduino/arduino-lint-action@v2
+        with:
+          version: 1.x
+          path: /tmp/lint
+          project-type: platform
+          compliance: strict
+          recursive: true
+      - name: Lint the index
+        uses: arduino/arduino-lint-action@v2
+        with:
+          version: 1.x
+          path: dist/package_ohmlab_index.json
+          project-type: package-index
+      - uses: actions/upload-artifact@v4
+        with:
+          name: boards-manager-package
+          path: dist/

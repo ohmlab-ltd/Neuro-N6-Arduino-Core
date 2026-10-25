@@ -1,0 +1,7 @@
+SPDX-FileCopyrightText: STMicroelectronics
+SPDX-License-Identifier: LicenseRef-ST-SLA0044
+
+Audio event detection, ESC-10, derived from YAMNet. ST's
+STM32N6-GettingStarted-Audio package,
+Projects/X-CUBE-AI/models/yamnet_1024_64x96_tl_qdq_int8.onnx, unmodified.
+Licensed under ST's SLA0044; the text is in LICENSE-SLA0044.md.

@@ -1,0 +1,32 @@
+{
+  "cpython-3.12.14+20260901-aarch64-apple-darwin-install_only_stripped.tar.gz": {
+    "checksum": "SHA-256:66b318a2e1c89c636a386ae2e07ccd400b7bb1181aaeaffa7ace53feebb5b510",
+    "file": "python3-3.12.14-aarch64-apple-darwin.tar.gz",
+    "size": "24481068"
+  },
+  "cpython-3.12.14+20260901-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz": {
+    "checksum": "SHA-256:f2689b958325cee13338e750f8e543a671ba8d08f2bbd00d0995d5977e5bf6b0",
+    "file": "python3-3.12.14-aarch64-unknown-linux-gnu.tar.gz",
+    "size": "28508488"
+  },
+  "cpython-3.12.14+20260901-armv7-unknown-linux-gnueabihf-install_only_stripped.tar.gz": {
+    "checksum": "SHA-256:55b3c94d53e71e25840ad31716649d8ece5be134a7cf758659aa8bd82d61929f",
+    "file": "python3-3.12.14-armv7-unknown-linux-gnueabihf.tar.gz",
+    "size": "25093093"
+  },
+  "cpython-3.12.14+20260901-x86_64-apple-darwin-install_only_stripped.tar.gz": {
+    "checksum": "SHA-256:dce4ced01626de5a43623afe78b59fbc6ad30d1fd693beb754a45038c273e775",
+    "file": "python3-3.12.14-x86_64-apple-darwin.tar.gz",
+    "size": "24278463"
+  },
+  "cpython-3.12.14+20260901-x86_64-pc-windows-msvc-install_only_stripped.tar.gz": {
+    "checksum": "SHA-256:95389587c94ad167da005d5483763187633db00671aaaaf154b6aaebf68513fa",
+    "file": "python3-3.12.14-x86_64-pc-windows-msvc.tar.gz",
+    "size": "21634873"
+  },
+  "cpython-3.12.14+20260901-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz": {
+    "checksum": "SHA-256:a57c5319a7553783f6e72a76d5f9f57476cf37f2ceb76144a1e793f21badaa2e",
+    "file": "python3-3.12.14-x86_64-unknown-linux-gnu.tar.gz",
+    "size": "33406548"
+  }
+}

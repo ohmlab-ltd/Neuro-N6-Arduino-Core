@@ -1,0 +1,7 @@
+SPDX-FileCopyrightText: 2026 Ohm Lab Ltd
+SPDX-License-Identifier: LicenseRef-OhmLab-Model-1.0
+
+Nia object detector, COCO-80, 256x256, by Ohm Lab. Licensed under the Ohm
+Lab Model Licence in LICENSE-OhmLab-Model.txt, not under the MIT licence:
+the model, and every form generated from it, may be run only on Ohm Lab
+hardware. See README.md.

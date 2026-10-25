@@ -1,0 +1,29 @@
+# Syntax colouring for the FaceID library
+
+# Methods and functions (KEYWORD2)
+n6_face_align_roi	KEYWORD2
+n6_face_bank_add	KEYWORD2
+n6_face_bank_clear	KEYWORD2
+n6_face_bank_init	KEYWORD2
+n6_face_bank_match	KEYWORD2
+n6_face_cam_to_lcd_h	KEYWORD2
+n6_face_cam_to_lcd_w	KEYWORD2
+n6_face_cam_to_lcd_x	KEYWORD2
+n6_face_cam_to_lcd_y	KEYWORD2
+n6_face_count	KEYWORD2
+n6_face_detector	KEYWORD2
+n6_face_detector_set_threshold	KEYWORD2
+n6_face_embedder	KEYWORD2
+n6_face_embedding	KEYWORD2
+n6_face_embedding_valid	KEYWORD2
+n6_face_get	KEYWORD2
+n6_face_last_peak	KEYWORD2
+
+# Constants (LITERAL1)
+N6_FACE_EMB_DIM	LITERAL1
+N6_FACE_LM_EYE_L	LITERAL1
+N6_FACE_LM_EYE_R	LITERAL1
+N6_FACE_LM_MOUTH_L	LITERAL1
+N6_FACE_LM_MOUTH_R	LITERAL1
+N6_FACE_LM_NOSE	LITERAL1
+N6_FACE_MAX	LITERAL1

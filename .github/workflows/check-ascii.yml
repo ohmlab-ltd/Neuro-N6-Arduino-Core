@@ -1,0 +1,24 @@
+name: Source hygiene
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ascii:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: No non-ASCII, BOM, CRLF or NUL in hand-written source
+        run: python3 tools/check_ascii.py
+
+  spec:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Arduino specification conformance
+        run: python3 tools/check_arduino_spec.py

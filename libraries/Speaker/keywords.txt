@@ -1,0 +1,27 @@
+# Syntax colouring for the Speaker library
+
+# Datatypes and classes (KEYWORD1)
+Speaker	KEYWORD1
+
+# Methods and functions (KEYWORD2)
+availableForWrite	KEYWORD2
+begin	KEYWORD2
+debugDump	KEYWORD2
+end	KEYWORD2
+n6_spk_available_for_write	KEYWORD2
+n6_spk_begin	KEYWORD2
+n6_spk_debug_dump	KEYWORD2
+n6_spk_end	KEYWORD2
+n6_spk_no_tone	KEYWORD2
+n6_spk_playing	KEYWORD2
+n6_spk_ready	KEYWORD2
+n6_spk_sample_rate	KEYWORD2
+n6_spk_set_volume	KEYWORD2
+n6_spk_tone	KEYWORD2
+n6_spk_write	KEYWORD2
+noTone	KEYWORD2
+playing	KEYWORD2
+sampleRate	KEYWORD2
+setVolume	KEYWORD2
+tone	KEYWORD2
+write	KEYWORD2

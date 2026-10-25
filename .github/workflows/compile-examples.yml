@@ -1,0 +1,50 @@
+name: Compile examples
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  # Installs the core from a Boards Manager package built from this checkout,
+  # then compiles the sketches that embed no model.
+  package-install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: arduino/setup-arduino-cli@v2
+
+      - name: Repack the Linux Python runtime and build the package
+        run: |
+          bash tools/packaging/repack_python.sh --only x86_64-pc-linux-gnu --out dist
+          python tools/packaging/build_package.py --out dist --base-url http://127.0.0.1:8765/ --rehost-base http://127.0.0.1:8765/
+          (cd dist && nohup python -m http.server 8765 --bind 127.0.0.1 >/dev/null 2>&1 &)
+          sleep 2
+
+      - name: Install the core from the package
+        run: |
+          arduino-cli core update-index --additional-urls http://127.0.0.1:8765/package_ohmlab_index.json
+          arduino-cli core install Ohmlab:stm32n6 --run-post-install --additional-urls http://127.0.0.1:8765/package_ohmlab_index.json
+          arduino-cli core list
+          if [ -f /etc/udev/rules.d/99-neuron6.rules ]; then echo "udev rule installed by post_install.sh"; else echo "udev rule not installed" && exit 1; fi
+
+      # SdFat is for the SD card sketches.
+      - name: Install SdFat
+        run: arduino-cli lib install SdFat@2.3.0
+
+      - name: Compile every sketch that needs no neural network tooling
+        run: ARDUINO_CLI=arduino-cli python tools/build_all_examples.py --no-models --out build-report.json
+
+      - name: Upload the build report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-report-hosted
+          path: build-report.json

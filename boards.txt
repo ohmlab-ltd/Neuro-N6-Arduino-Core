@@ -1,0 +1,75 @@
+# Board definition for the Ohm Lab Neuro N6, STM32N657.
+
+menu.optimize=Optimize
+menu.dbgconsole=Debug console
+menu.modelupload=Model weights
+menu.buildlog=Build output
+
+neuron6.name=Neuro N6
+
+# Tools > Optimize. The first entry is the default.
+neuron6.menu.optimize.o2=Faster (-O2, default)
+neuron6.menu.optimize.o2.build.optimization_flags=-O2
+neuron6.menu.optimize.o3=Fastest (-O3)
+neuron6.menu.optimize.o3.build.optimization_flags=-O3
+neuron6.menu.optimize.os=Smallest (-Os)
+neuron6.menu.optimize.os.build.optimization_flags=-Os
+neuron6.menu.optimize.o1=Fast (-O1)
+neuron6.menu.optimize.o1.build.optimization_flags=-O1
+neuron6.menu.optimize.o0=Debug (-O0)
+neuron6.menu.optimize.o0.build.optimization_flags=-O0
+
+# Tools > Debug console
+neuron6.menu.dbgconsole.off=Off (clean Serial console, default)
+neuron6.menu.dbgconsole.off.build.dbgconsole_flags=-DNEURON6_DEBUG_CONSOLE=0
+neuron6.menu.dbgconsole.on=On (CDC single-key commands + 1 Hz telemetry)
+neuron6.menu.dbgconsole.on.build.dbgconsole_flags=-DNEURON6_DEBUG_CONSOLE=1
+
+# Tools > Model weights. Covers the model weights and, for wireless sketches,
+# the IW610 firmware at 0x91E00000. The changed mode skips a blob whose
+# on-flash CRC matches.
+neuron6.menu.modelupload.changed=Upload only when changed (default)
+neuron6.menu.modelupload.changed.build.model_upload_mode=changed
+neuron6.menu.modelupload.always=Upload every time
+neuron6.menu.modelupload.always.build.model_upload_mode=always
+
+# Tools > Build output
+neuron6.menu.buildlog.minimal=Minimal (default)
+neuron6.menu.buildlog.minimal.build.neuron6_buildlog=minimal
+neuron6.menu.buildlog.verbose=Verbose (full detail)
+neuron6.menu.buildlog.verbose.build.neuron6_buildlog=verbose
+
+neuron6.build.core=NeuroN6
+neuron6.build.variant=NeuroN6
+
+neuron6.build.mcu=cortex-m55
+neuron6.build.f_cpu=800000000L
+neuron6.build.fpu=fpv5-d16
+neuron6.build.floatabi=hard
+neuron6.build.board=NEURON6
+
+neuron6.build.ldscript={runtime.platform.path}/system/linker/STM32N657I0HXQ_LRUN.ld
+
+# BOARD_NAME is passed as bare tokens and stringified in usb_descriptors.c:
+# arduino-cli runs the compiler without a shell.
+neuron6.build.extra_flags="-DBOARD_NAME=Neuro N6" -DBOARD_VENDORID=0x1209 -DBOARD_PRODUCTID=0x8008 -DHAS_UNIQUE_ISERIAL_DESCRIPTOR
+# vid.1 and pid.1 are the FSBL DFU identity.
+neuron6.vid.0=0x1209
+neuron6.pid.0=0x8008
+neuron6.vid.1=0x1209
+neuron6.pid.1=0x8009
+
+neuron6.upload.tool=neuron6_uploader
+neuron6.upload.tool.default=neuron6_uploader
+neuron6.upload.tool.serial=neuron6_uploader
+neuron6.upload.protocol=serial
+neuron6.upload.speed=115200
+# The FSBL copies the image from XSPI flash at upload.address to RAM at
+# 0x34000000. It must end below the FSBL at 0x34180000, so 0x180000 bytes,
+# less 32 for the bootloader's staging header (N6_OTA_PSRAM_IMAGE_OFF).
+neuron6.upload.maximum_size=1572832
+# Code and data share the RAM from 0x34000400 to 0x34200000.
+neuron6.upload.maximum_data_size=2096128
+neuron6.upload.address=0x90100000
+neuron6.upload.use_1200bps_touch=true
+neuron6.upload.wait_for_upload_port=true

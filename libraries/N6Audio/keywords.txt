@@ -1,0 +1,15 @@
+# Syntax colouring for the N6Audio library
+
+# Methods and functions (KEYWORD2)
+n6_fft_init	KEYWORD2
+n6_fft_magnitude	KEYWORD2
+n6_frame_init	KEYWORD2
+n6_frame_push	KEYWORD2
+n6_spectrum_init	KEYWORD2
+n6_spectrum_loudest	KEYWORD2
+n6_spectrum_update	KEYWORD2
+
+# Constants (LITERAL1)
+N6_FFT_HOP	LITERAL1
+N6_FFT_LOG2	LITERAL1
+N6_SPECTRUM_MAX_BARS	LITERAL1

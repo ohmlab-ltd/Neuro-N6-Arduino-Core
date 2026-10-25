@@ -1,0 +1,132 @@
+name=Ohm Lab Neuro N6 (STM32N6)
+version=0.1.3
+
+# GCC 11 or later: the linker script uses the READONLY keyword. A manual clone
+# sets compiler.path= in platform.local.txt to use the compiler on PATH.
+compiler.path={runtime.tools.xpack-arm-none-eabi-gcc.path}/bin/
+compiler.c.cmd=arm-none-eabi-gcc
+compiler.cpp.cmd=arm-none-eabi-g++
+compiler.S.cmd=arm-none-eabi-gcc
+compiler.ar.cmd=arm-none-eabi-ar
+compiler.c.elf.cmd=arm-none-eabi-gcc
+compiler.objcopy.cmd=arm-none-eabi-objcopy
+compiler.size.cmd=arm-none-eabi-size
+
+# CONFIG_5GHz_SUPPORT=0 restricts the IW610 to 2.4 GHz.
+# EWL_TIMEOUT is the wait for the JPEG encoder's line-buffer interrupt in ms.
+# At QSXGA it exceeds the 100 ms default.
+compiler.extra_flags=-mcpu={build.mcu} -mthumb -mfpu={build.fpu} -mfloat-abi={build.floatabi} -mcmse -DUSE_HAL_DRIVER -DSTM32N657xx -DLL_ATON_PLATFORM=9 -DLL_ATON_OSAL=5 -DLL_ATON_SW_FALLBACK=1 -DLL_ATON_RT_MODE=2 -DLL_ATON_DBG_BUFFER_INFO_EXCLUDED=1 -DAPP_HAS_PARALLEL_NETWORKS=0 -D__FPU_PRESENT=1 -DUSE_FULL_ASSERT=1 -DUSE_FULL_LL_DRIVER=1 -DSDK_OS_FREE_RTOS -DOSA_USED -DFSL_OSA_TASK_ENABLE=1 -DWIFI_IW610_BOARD_MURATA_2LL_M2 -DCONFIG_NXP_WIFI_SOFTAP_SUPPORT=1 -DCONFIG_5GHz_SUPPORT=0 -DEWL_TIMEOUT=300UL
+
+build.core.path={runtime.platform.path}/cores/{build.core}
+build.system.path={runtime.platform.path}/system
+build.maya.path={runtime.platform.path}/libraries/MayaW476/src
+build.n6lwip.path={runtime.platform.path}/libraries/N6lwIP/src
+
+# {build.path}/neuron6_model holds the include shims that
+# tools/neuron6_model_gen.py writes. It is absent for a sketch without models.
+compiler.includes="-I{build.path}/neuron6_model" "-I{build.core.path}" "-I{build.system.path}" "-I{build.core.path}/STM32N6xx_HAL_Driver/Inc" "-I{build.core.path}/CMSIS/Include" "-I{build.core.path}/CMSIS/Device/ST/STM32N6xx/Include" "-I{build.core.path}/CMSIS/Core/Include" "-I{build.core.path}/CMSIS/RTOS2/Include" "-I{build.core.path}/device" "-I{build.core.path}/AI_Runtime/Inc" "-I{build.core.path}/AI_Runtime/Npu/Devices/STM32N6XX" "-I{build.core.path}/AI_Runtime/Npu/ll_aton" "-I{build.core.path}/class/vendor" "-I{build.core.path}/class/cdc" "-I{build.core.path}/lib_vision_models_pp/lib_vision_models_pp/Inc" "-I{build.core.path}/lib_vision_models_pp/lib_vision_models_pp/Src" "-I{build.core.path}/ST/VideoEncoder_EWL" "-I{build.core.path}/Third_Party/VideoEncoder/source/common" "-I{build.core.path}/Third_Party/VideoEncoder/inc" "-I{build.core.path}/Third_Party/VideoEncoder/source/jpeg" "-I{build.core.path}/CMSIS/DSP/Include" "-I{build.core.path}/CMSIS/DAP/Firmware/Include" "-I{build.core.path}/FreeRTOS/Source/include" "-I{build.core.path}/FreeRTOS/Source/portable/GCC/ARM_CM55_NTZ/non_secure" "-I{build.core.path}/FreeRTOS/Source/CMSIS_RTOS_V2" "-I{build.maya.path}/maya_w4_board" "-I{build.maya.path}/sdio_port" "-I{build.maya.path}/osa" "-I{build.maya.path}/osa/lists" "-I{build.maya.path}/osa/stubs" "-I{build.maya.path}/wifi_nxp/incl" "-I{build.maya.path}/wifi_nxp/incl/wlcmgr" "-I{build.maya.path}/wifi_nxp/incl/wifidriver" "-I{build.maya.path}/wifi_nxp/incl/wmcrypto" "-I{build.maya.path}/wifi_nxp/incl/port" "-I{build.maya.path}/wifi_nxp/incl/port/osa" "-I{build.maya.path}/wifi_nxp/incl/port/net" "-I{build.maya.path}/wifi_nxp/incl/port/net/hooks" "-I{build.maya.path}/wifi_nxp/port" "-I{build.maya.path}/wifi_nxp/port/osa" "-I{build.maya.path}/wifi_nxp/port/net" "-I{build.maya.path}/wifi_nxp/wifidriver" "-I{build.maya.path}/wifi_nxp/wifidriver/incl" "-I{build.maya.path}/wifi_nxp/sdio_nxp_abs/incl" "-I{build.maya.path}/wifi_nxp/wmcrypto/aescrypto" "-I{build.maya.path}/wifi_nxp/firmware_dnld" "-I{build.maya.path}/wifi_nxp/fwdnld_intf_abs" "-I{build.maya.path}/wifi_nxp/dhcpd" "-I{build.maya.path}/wifi_nxp/wifi_bt_firmware/iw610x" "-I{build.n6lwip.path}/lwip/src/include" "-I{build.n6lwip.path}/lwip/port" "-I{build.n6lwip.path}/lwip/port/sys_arch/dynamic"
+
+compiler.warning_flags=-w
+compiler.warning_flags.none=-w
+compiler.warning_flags.default=
+# -Wno-unknown-pragmas: the compiler does not know #pragma neuron6, which the
+# model build step reads.
+compiler.warning_flags.more=-Wall -Wno-unknown-pragmas
+compiler.warning_flags.all=-Wall -Wextra -Wno-unknown-pragmas
+# Fallback when no Tools > Optimize selection reaches the build.
+build.optimization_flags=-O2
+compiler.optimization_flags={build.optimization_flags}
+
+# {build.extra_flags} comes last, so a board entry can override the rest.
+build.extra_flags=
+build.dbgconsole_flags=
+build.arduino_defines=-DARDUINO={runtime.ide.version} -DF_CPU={build.f_cpu} -DARDUINO_ARCH_{build.arch} -DARDUINO_{build.board} {build.dbgconsole_flags} {build.extra_flags}
+
+# -fno-strict-aliasing: the NXP wifi_nxp and mlan code casts pointers between
+# packet structs, and wlan_init's firmware download hangs at -O2 without it.
+compiler.c.flags={compiler.extra_flags} -c {compiler.optimization_flags} -fno-strict-aliasing {compiler.warning_flags} -std=gnu17 -ffunction-sections -fdata-sections {build.arduino_defines}
+compiler.cpp.flags={compiler.extra_flags} -c {compiler.optimization_flags} -fno-strict-aliasing {compiler.warning_flags} -std=gnu++17 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti {build.arduino_defines}
+compiler.S.flags={compiler.extra_flags} -c -x assembler-with-cpp {build.arduino_defines}
+
+# Empty, for platform.local.txt.
+compiler.c.extra_flags=
+compiler.cpp.extra_flags=
+compiler.S.extra_flags=
+compiler.ar.extra_flags=
+compiler.c.elf.extra_flags=
+
+recipe.c.o.pattern="{compiler.path}{compiler.c.cmd}" {compiler.c.flags} {compiler.c.extra_flags} {compiler.includes} {includes} "{source_file}" -o "{object_file}"
+recipe.cpp.o.pattern="{compiler.path}{compiler.cpp.cmd}" {compiler.cpp.flags} {compiler.cpp.extra_flags} {compiler.includes} {includes} "{source_file}" -o "{object_file}"
+recipe.S.o.pattern="{compiler.path}{compiler.S.cmd}" {compiler.S.flags} {compiler.S.extra_flags} {compiler.includes} {includes} "{source_file}" -o "{object_file}"
+recipe.s.o.pattern="{compiler.path}{compiler.S.cmd}" {compiler.S.flags} {compiler.S.extra_flags} {compiler.includes} {includes} "{source_file}" -o "{object_file}"
+
+compiler.ar.flags=rcs
+compiler.cache_core=false
+recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} {compiler.ar.extra_flags} "{archive_file_path}" "{object_file}"
+
+# Python for the build hooks and the uploader. A manual clone sets
+# neuron6.python=python3 in platform.local.txt.
+neuron6.python.dir={runtime.tools.python3.path}
+neuron6.python="{neuron6.python.dir}/bin/python3"
+neuron6.python.windows="{neuron6.python.dir}/python.exe"
+
+# Tools > Build output overrides this.
+build.neuron6_buildlog=minimal
+
+recipe.hooks.prebuild.0.pattern={neuron6.python} "{runtime.platform.path}/tools/neuron6_build_log.py" start "{build.project_name}" "{build.board}" "{build.optimization_flags}" "{build.neuron6_buildlog}"
+# Forces a clean build and a rescan of libraries/.
+recipe.hooks.prebuild.1.pattern.windows=cmd /c "del /q "{build.path}\core\core.a" 2>nul & del /q "{build.path}\libraries.cache" 2>nul & del /q "{build.path}\includes.cache" 2>nul & exit /b 0"
+recipe.hooks.prebuild.1.pattern.macosx=bash -c "rm -f {build.path}/core/core.a {build.path}/libraries.cache {build.path}/includes.cache 2>/dev/null; true"
+recipe.hooks.prebuild.1.pattern.linux=bash -c "rm -f {build.path}/core/core.a {build.path}/libraries.cache {build.path}/includes.cache 2>/dev/null; true"
+
+recipe.hooks.prebuild.2.pattern={neuron6.python} "{runtime.platform.path}/tools/check_toolchain.py" "{compiler.path}{compiler.c.cmd}"
+recipe.hooks.prebuild.3.pattern={neuron6.python} "{runtime.platform.path}/tools/neuron6_build_log.py" preflight-ok "{build.neuron6_buildlog}"
+
+# Runs ST Edge AI Core on each "#pragma neuron6 model=" file and writes
+# {build.path}/neuron6_models.json for the upload.
+recipe.hooks.prebuild.4.pattern={neuron6.python} "{runtime.platform.path}/tools/neuron6_model_gen.py" "{build.source.path}" "{build.path}" "{runtime.platform.path}" "{build.neuron6_buildlog}"
+
+recipe.ar.create.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} "{archive_file_path}"
+recipe.ar.append.pattern="{compiler.path}{compiler.ar.cmd}" r "{archive_file_path}" "{object_file}"
+recipe.ar.extract.pattern="{compiler.path}{compiler.ar.cmd}" x "{archive_file_path}"
+
+# --specs=nano.specs: newlib-nano. An explicit -lc would pull the full libc.
+# -u _printf_float: the ATON runtime formats floats, and nano printf is
+#   integer-only by default.
+# -Wl,--no-warn-rwx-segments: code runs from AXISRAM alongside data.
+compiler.c.elf.flags={compiler.extra_flags} --specs=nano.specs -u _printf_float -Wl,--gc-sections -Wl,--no-warn-rwx-segments "-Wl,-Map,{build.path}/{build.project_name}.map" "-T{build.ldscript}"
+
+ai_runtime_lib={build.core.path}/AI_Runtime/Lib/GCC/ARMCortexM55/NetworkRuntime1020_CM55_GCC.a
+
+recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}" {compiler.c.elf.flags} {compiler.c.elf.extra_flags} -o "{build.path}/{build.project_name}.elf" {object_files} -Wl,--whole-archive "{archive_file_path}" -Wl,--no-whole-archive "{ai_runtime_lib}" -Wl,--start-group -lm -lgcc -lstdc++ -Wl,--end-group
+
+recipe.objcopy.bin.pattern="{compiler.path}{compiler.objcopy.cmd}" -O binary "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.bin"
+
+# Sketch > Export Compiled Binary saves the signed image.
+recipe.output.tmp_file={build.project_name}_Trusted.bin
+recipe.output.save_file={build.project_name}.{build.board}_Trusted.bin
+recipe.size.pattern={neuron6.python} "{runtime.platform.path}/tools/neuron6_size.py" "{compiler.path}{compiler.size.cmd}" "{build.path}/{build.project_name}.elf" "{upload.maximum_size}" "{build.neuron6_buildlog}"
+
+# Matched against the "arm-none-eabi-size -A" table that neuron6_size.py prints
+# on stdout.
+recipe.size.regex=^(?:\.isr_vector|\.text|\.rodata|\.ARM\.extab|\.ARM|\.preinit_array|\.init_array|\.fini_array|\.data|\.noncacheable|\.gnu\.sgstubs|\.ext_psram_init)\s+([0-9]+).*
+recipe.size.regex.data=^(?:\.data|\.noncacheable|\.bss|\.axisram_nc|\._user_heap_stack)\s+([0-9]+).*
+
+build.preferred_out_format=bin
+
+# Image header. tools/stm32_header.py writes it, or ST's tool when
+# SIGNING_TOOL=auto.
+tools.signscript.path={runtime.platform.path}/tools
+tools.signscript.script=sign_bin.py
+
+recipe.hooks.postbuild.0.pattern={neuron6.python} "{runtime.platform.path}/tools/neuron6_build_log.py" signing "{build.neuron6_buildlog}"
+recipe.hooks.postbuild.1.pattern={neuron6.python} "{tools.signscript.path}/{tools.signscript.script}" "{build.path}" "{build.project_name}"
+# Drops the WiFi firmware from the upload when no wireless library was linked.
+recipe.hooks.postbuild.2.pattern={neuron6.python} "{runtime.platform.path}/tools/neuron6_model_gen.py" --prune-radio "{build.path}"
+recipe.hooks.postbuild.3.pattern={neuron6.python} "{runtime.platform.path}/tools/neuron6_build_log.py" done "{build.neuron6_buildlog}"
+
+# neuron6_deploy.py writes the weights listed in neuron6_models.json, then the
+# application. Tools > Model weights overrides build.model_upload_mode.
+build.model_upload_mode=changed
+tools.neuron6_uploader.path={runtime.platform.path}/tools/neuro-n6-uploader
+tools.neuron6_uploader.upload.pattern={neuron6.python} "{tools.neuron6_uploader.path}/neuron6_deploy.py" --port "{serial.port}" --bin "{build.path}/{build.project_name}_Trusted.bin" --address {upload.address} --manifest "{build.path}/neuron6_models.json" --model-upload {build.model_upload_mode}

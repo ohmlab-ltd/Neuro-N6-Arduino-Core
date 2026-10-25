@@ -1,0 +1,32 @@
+# Syntax colouring for the SPI library
+
+# Datatypes and classes (KEYWORD1)
+SPIClass	KEYWORD1
+SPISettings	KEYWORD1
+
+# Methods and functions (KEYWORD2)
+attachInterrupt	KEYWORD2
+begin	KEYWORD2
+beginTransaction	KEYWORD2
+detachInterrupt	KEYWORD2
+end	KEYWORD2
+endTransaction	KEYWORD2
+forceDataMode	KEYWORD2
+notUsingInterrupt	KEYWORD2
+reconfigure	KEYWORD2
+setBitOrder	KEYWORD2
+setClockDivider	KEYWORD2
+setDataMode	KEYWORD2
+setKernelSource	KEYWORD2
+transfer	KEYWORD2
+transfer16	KEYWORD2
+txnClose	KEYWORD2
+txnOpen	KEYWORD2
+usingInterrupt	KEYWORD2
+
+# Constants (LITERAL1)
+SPI_HAS_TRANSACTION	LITERAL1
+SPI_MODE0	LITERAL1
+SPI_MODE1	LITERAL1
+SPI_MODE2	LITERAL1
+SPI_MODE3	LITERAL1

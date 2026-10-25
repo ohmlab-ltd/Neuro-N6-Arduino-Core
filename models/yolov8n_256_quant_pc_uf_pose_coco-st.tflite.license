@@ -1,0 +1,8 @@
+SPDX-FileCopyrightText: Ultralytics Inc. <https://github.com/ultralytics/ultralytics>
+SPDX-License-Identifier: AGPL-3.0-only
+
+YOLOv8n pose estimation, 256x256, as STMicroelectronics exports it in
+stm32-hotspot/ultralytics, examples/YOLOv8-STEdgeAI/stedgeai_models/
+pose_estimation. Unmodified. Licensed under AGPL-3.0; the text is in
+LICENSE-AGPL-3.0.txt. A sketch that embeds this file, and firmware built
+from it, are bound by AGPL-3.0. See README.md.

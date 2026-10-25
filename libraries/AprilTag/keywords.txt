@@ -1,0 +1,23 @@
+# Syntax colouring for the AprilTag library
+
+# Datatypes and classes (KEYWORD1)
+n6_apriltag_t	KEYWORD1
+n6_apriltag_cfg_t	KEYWORD1
+n6_apriltag_stats_t	KEYWORD1
+n6_apriltag_pose_t	KEYWORD1
+n6_camera_cal_t	KEYWORD1
+
+# Methods and functions (KEYWORD2)
+n6_apriltag_find_gray	KEYWORD2
+n6_apriltag_find_rgb888	KEYWORD2
+n6_apriltag_last_stats	KEYWORD2
+n6_apriltag_debug_dark	KEYWORD2
+n6_apriltag_debug_cells	KEYWORD2
+n6_apriltag_pose	KEYWORD2
+n6_camera_cal_load	KEYWORD2
+n6_camera_cal_store	KEYWORD2
+n6_camera_cal_scale	KEYWORD2
+
+# Constants (LITERAL1)
+N6_APRILTAG_MAX_DIM	LITERAL1
+N6_APRILTAG_CFG_DEFAULT	LITERAL1

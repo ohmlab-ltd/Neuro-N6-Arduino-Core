@@ -1,0 +1,11 @@
+SPDX-FileCopyrightText: 2019 StarClouds <https://github.com/Star-Clouds/CenterFace>
+SPDX-FileCopyrightText: 2026 Ohm Lab Ltd
+SPDX-License-Identifier: MIT
+
+CenterFace face detector (Star-Clouds/CenterFace, models/onnx/centerface.onnx),
+licensed under MIT; the text is in LICENSE-MIT-CenterFace.txt. Changed by
+Ohm Lab: converted to int8 TFLite at 128x128, and its input moved past the
+transpose by tools/tflite_input_to_hwc.py.
+
+Trained on the WIDER FACE training set, whose terms are not part of that
+licence. See README.md.

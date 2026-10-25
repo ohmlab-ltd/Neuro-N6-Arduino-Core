@@ -1,0 +1,13 @@
+# Syntax colouring for the Barcode1D library
+
+# Datatypes and classes (KEYWORD1)
+barcode1d_sym_t	KEYWORD1
+
+# Methods and functions (KEYWORD2)
+barcode1d_last_diag	KEYWORD2
+barcode1d_scan_gray	KEYWORD2
+
+# Constants (LITERAL1)
+BARCODE1D_EAN13	LITERAL1
+BARCODE1D_NONE	LITERAL1
+BARCODE1D_UPCA	LITERAL1

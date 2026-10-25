@@ -1,0 +1,9 @@
+# Syntax colouring for the MayaBLE library
+
+# Datatypes and classes (KEYWORD1)
+MayaBLE_t	KEYWORD1
+
+# Methods and functions (KEYWORD2)
+begin	KEYWORD2
+isAdvertising	KEYWORD2
+printDiag	KEYWORD2

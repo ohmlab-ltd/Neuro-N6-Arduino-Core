@@ -1,0 +1,10 @@
+SPDX-FileCopyrightText: 2019 foamliu <https://github.com/foamliu/MobileFaceNet>
+SPDX-License-Identifier: Apache-2.0
+
+MobileFaceNet, release v1.0 (mobilefacenet.pt) of foamliu/MobileFaceNet,
+licensed under Apache-2.0; the text is in LICENSE-Apache-2.0.txt.
+Changed by Ohm Lab: exported to ONNX and quantised to int8.
+
+Trained on InsightFace's refined MS-Celeb-1M (faces_ms1m_112x112), which
+InsightFace provides, with the models trained on it, for non-commercial
+research purposes only. See README.md.

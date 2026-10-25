@@ -1,0 +1,32 @@
+# Syntax colouring for the VD66GY library
+
+# Datatypes and classes (KEYWORD1)
+VD66GY	KEYWORD1
+
+# Methods and functions (KEYWORD2)
+bringUp	KEYWORD2
+chipId	KEYWORD2
+controlCaps	KEYWORD2
+csiLaneRateMbps	KEYWORD2
+defersStreaming	KEYWORD2
+exposureUs	KEYWORD2
+gain	KEYWORD2
+getFormat	KEYWORD2
+init	KEYWORD2
+maxFps	KEYWORD2
+name	KEYWORD2
+setAeTargetPercent	KEYWORD2
+setAutoExposure	KEYWORD2
+setAutoGain	KEYWORD2
+setExposureUs	KEYWORD2
+setGain	KEYWORD2
+setStrobe	KEYWORD2
+setStrobeAlwaysOn	KEYWORD2
+streamOff	KEYWORD2
+streamOn	KEYWORD2
+strobeWarnIfLate	KEYWORD2
+
+# Constants (LITERAL1)
+VD66GY_CARRIER_NEUROVISION	LITERAL1
+VD66GY_CARRIER_THERMAL	LITERAL1
+VD66_ISP_AUTO_ENABLED	LITERAL1

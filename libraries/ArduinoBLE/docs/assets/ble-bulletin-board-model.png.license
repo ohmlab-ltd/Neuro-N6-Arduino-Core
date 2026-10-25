@@ -1,0 +1,5 @@
+SPDX-FileCopyrightText: Arduino SA
+SPDX-License-Identifier: LGPL-2.1-or-later
+
+From the documentation of ArduinoBLE 2.1.0, unmodified. The library's
+licence is in ../../LICENSE.

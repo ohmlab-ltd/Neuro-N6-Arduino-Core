@@ -1,0 +1,12 @@
+# Syntax colouring for the EthernetN6 library
+
+# Datatypes and classes (KEYWORD1)
+EthernetN6_t	KEYWORD1
+
+# Instances (KEYWORD2)
+EthernetN6	KEYWORD2
+
+# Methods and functions (KEYWORD2)
+setStaticIp	KEYWORD2
+localIP	KEYWORD2
+port	KEYWORD2

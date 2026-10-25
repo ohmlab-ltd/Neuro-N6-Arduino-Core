@@ -1,0 +1,87 @@
+# Syntax colouring for the NeuroN6-Powersave library
+
+# Datatypes and classes (KEYWORD1)
+NeuroN6PowerSave	KEYWORD1
+PowerSaveCameraClass	KEYWORD1
+
+# Methods and functions (KEYWORD2)
+applyClockTree	KEYWORD2
+assistStart	KEYWORD2
+assistStop	KEYWORD2
+begin	KEYWORD2
+buffer	KEYWORD2
+busSleep	KEYWORD2
+busWake	KEYWORD2
+cameraHeight	KEYWORD2
+cameraWidth	KEYWORD2
+capture	KEYWORD2
+captureJpeg	KEYWORD2
+clockProfile	KEYWORD2
+cpuClockHz	KEYWORD2
+externalWatchdogArm	KEYWORD2
+externalWatchdogArmPin	KEYWORD2
+externalWatchdogBegin	KEYWORD2
+externalWatchdogHeartbeat	KEYWORD2
+externalWatchdogHeartbeatTimeout	KEYWORD2
+externalWatchdogKick	KEYWORD2
+externalWatchdogKickMs	KEYWORD2
+externalWatchdogPause	KEYWORD2
+externalWatchdogService	KEYWORD2
+frameBytes	KEYWORD2
+gpioFloatingToAnalog	KEYWORD2
+height	KEYWORD2
+idleWfiDisable	KEYWORD2
+idleWfiEnable	KEYWORD2
+imuSleep	KEYWORD2
+isStreaming	KEYWORD2
+iwdgFeed	KEYWORD2
+jpeg	KEYWORD2
+jpegSize	KEYWORD2
+ledBlink	KEYWORD2
+magSleep	KEYWORD2
+markerConfig	KEYWORD2
+markerPulse	KEYWORD2
+markerSet	KEYWORD2
+markersBegin	KEYWORD2
+micSleep	KEYWORD2
+norSleep	KEYWORD2
+npuOff	KEYWORD2
+npuRamOff	KEYWORD2
+periphOff	KEYWORD2
+periphOn	KEYWORD2
+psramSleep	KEYWORD2
+rtcClockHz	KEYWORD2
+rtcPrepare	KEYWORD2
+rtcTimeMs	KEYWORD2
+sensorSleep	KEYWORD2
+sensorWake	KEYWORD2
+sensorsSleep	KEYWORD2
+setClockProfile	KEYWORD2
+setCpuDivider	KEYWORD2
+setJpegMode	KEYWORD2
+setPipe1Assist	KEYWORD2
+setStopChunkMs	KEYWORD2
+setStopSvosLow	KEYWORD2
+sleepLight	KEYWORD2
+sleepStop	KEYWORD2
+standby	KEYWORD2
+stopChunkMs	KEYWORD2
+thermalPower	KEYWORD2
+usbOff	KEYWORD2
+vd6gPoll8	KEYWORD2
+vd6gRead8	KEYWORD2
+vd6gWrite8	KEYWORD2
+wdHeartbeatLost	KEYWORD2
+width	KEYWORD2
+wutTicksForMs	KEYWORD2
+
+# Constants (LITERAL1)
+PS_CLOCK_CRUISE	LITERAL1
+PS_CLOCK_ECO	LITERAL1
+PS_CLOCK_FULL	LITERAL1
+PS_CLOCK_LOW	LITERAL1
+PS_MARKER_AUX	LITERAL1
+PS_MARKER_AWAKE	LITERAL1
+PS_MARKER_CAMERA	LITERAL1
+PS_MARKER_COUNT	LITERAL1
+PS_MARKER_THERMAL	LITERAL1

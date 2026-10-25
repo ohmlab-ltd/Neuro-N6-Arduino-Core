@@ -1,0 +1,6 @@
+# Syntax colouring for the N6EventsSD library
+
+# Methods and functions (KEYWORD2)
+n6_event_sink_sd	KEYWORD2
+n6_event_sink_sd_last_dir	KEYWORD2
+n6_event_sink_sd_stats	KEYWORD2

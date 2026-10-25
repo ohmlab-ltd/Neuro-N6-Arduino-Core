@@ -1,0 +1,21 @@
+# Syntax colouring for the Microphone library
+
+# Datatypes and classes (KEYWORD1)
+Microphone	KEYWORD1
+
+# Methods and functions (KEYWORD2)
+available	KEYWORD2
+begin	KEYWORD2
+n6_audio_available	KEYWORD2
+n6_audio_begin	KEYWORD2
+n6_audio_peak	KEYWORD2
+n6_audio_read	KEYWORD2
+n6_audio_ready	KEYWORD2
+n6_audio_sample_rate	KEYWORD2
+n6_audio_stream_enable	KEYWORD2
+n6_audio_streaming	KEYWORD2
+peak	KEYWORD2
+read	KEYWORD2
+sampleRate	KEYWORD2
+streamToNS	KEYWORD2
+streaming	KEYWORD2

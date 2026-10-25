@@ -1,0 +1,13 @@
+# Syntax colouring for the A7683EVideo library
+
+# Datatypes and classes (KEYWORD1)
+A7683EVideoClass	KEYWORD1
+
+# Methods and functions (KEYWORD2)
+active	KEYWORD2
+begin	KEYWORD2
+framesSeen	KEYWORD2
+framesSkipped	KEYWORD2
+grab	KEYWORD2
+holding	KEYWORD2
+release	KEYWORD2

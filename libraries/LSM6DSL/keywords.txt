@@ -1,0 +1,17 @@
+# Syntax colouring for the LSM6DSL library
+
+# Datatypes and classes (KEYWORD1)
+LSM6DSL	KEYWORD1
+
+# Methods and functions (KEYWORD2)
+begin	KEYWORD2
+readRegs	KEYWORD2
+readTemp	KEYWORD2
+sendNS	KEYWORD2
+whoami	KEYWORD2
+writeReg	KEYWORD2
+
+# Constants (LITERAL1)
+LSM6DSL_ADDR_HIGH	LITERAL1
+LSM6DSL_ADDR_LOW	LITERAL1
+LSM6DSL_WHO_AM_I_VAL	LITERAL1

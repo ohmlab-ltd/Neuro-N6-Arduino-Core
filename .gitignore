@@ -1,0 +1,43 @@
+# Build artifacts
+*.o
+*.d
+*.exe
+*.bin
+*.elf
+*.map
+*.hex
+*.a
+!cores/NeuroN6/AI_Runtime/Lib/**/*.a
+*.log
+
+# Python
+*.pyc
+__pycache__/
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+nul
+
+# tools/build_all_examples.py output
+build-report.json
+after.json
+baseline.json
+
+# Local build settings, see CONTRIBUTING.md
+platform.local.txt
+
+# extras/bench/WiFiTwoWay network settings
+extras/bench/WiFiTwoWay/wifi_secrets.h
+

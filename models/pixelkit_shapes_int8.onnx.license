@@ -1,0 +1,11 @@
+SPDX-FileCopyrightText: Megvii Inc. <https://github.com/Megvii-BaseDetection/YOLOX>
+SPDX-FileCopyrightText: 2026 Ohm Lab Ltd
+SPDX-License-Identifier: Apache-2.0
+
+Derived from Megvii's COCO-pretrained yolox_nano checkpoint
+(Megvii-BaseDetection/YOLOX), licensed under Apache-2.0; the text is in
+LICENSE-Apache-2.0.txt. Changed by Ohm Lab: trained in PixelKit to find
+circles and squares, exported to ONNX and quantised to int8.
+
+The training images were drawn by a script from fixed seeds and contain no
+third-party content.

@@ -1,0 +1,7 @@
+SPDX-FileCopyrightText: STMicroelectronics <https://github.com/STMicroelectronics/stm32ai-modelzoo>
+SPDX-License-Identifier: Apache-2.0
+
+MobileNetV2, alpha 0.35, 128x128, ImageNet-1000, from ST's model zoo:
+image_classification/mobilenetv2/Public_pretrainedmodel_public_dataset/
+ImageNet/mobilenetv2_a035_128. Licensed under Apache-2.0; the text is in
+LICENSE-Apache-2.0.txt.

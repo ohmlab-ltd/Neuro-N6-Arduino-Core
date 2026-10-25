@@ -1,0 +1,13 @@
+SPDX-FileCopyrightText: NXP
+SPDX-License-Identifier: LicenseRef-LA_OPT_NXP_Software_License
+
+NXP IW610 Wi-Fi and BLE firmware 18.99.8.p10, from NXP's wifi_nb_fw
+repository, commit 7d80b36c846d7948acc19fff17d9bfcc3e8acd53. Unmodified.
+Licensed under the NXP software licence in LA_OPT_NXP_Software_License.txt,
+not under the MIT licence.
+
+The Software Content Register at that commit (scr.txt) lists this file as
+fw_bin, version 18.99.8.p10 (iw610x), under "LA_OPT_NXP_Software_License v63
+May 2025 - Additional distribution license granted, Section 2.3 applies":
+distribution in object code as part of, or embedded within, a product that
+uses the NXP device.

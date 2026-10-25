@@ -1,0 +1,112 @@
+[
+  {
+    "name": "xpack-arm-none-eabi-gcc",
+    "version": "13.3.1-1.1",
+    "systems": [
+      {
+        "host": "x86_64-mingw32",
+        "url": "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v13.3.1-1.1/xpack-arm-none-eabi-gcc-13.3.1-1.1-win32-x64.zip",
+        "archiveFileName": "xpack-arm-none-eabi-gcc-13.3.1-1.1-win32-x64.zip",
+        "checksum": "SHA-256:49cda1bf01215f3df0613972d21f9fec3eb79dca82506365e7da2ff74b921733",
+        "size": "278461975"
+      },
+      {
+        "host": "i686-mingw32",
+        "url": "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v13.3.1-1.1/xpack-arm-none-eabi-gcc-13.3.1-1.1-win32-x64.zip",
+        "archiveFileName": "xpack-arm-none-eabi-gcc-13.3.1-1.1-win32-x64.zip",
+        "checksum": "SHA-256:49cda1bf01215f3df0613972d21f9fec3eb79dca82506365e7da2ff74b921733",
+        "size": "278461975"
+      },
+      {
+        "host": "x86_64-apple-darwin",
+        "url": "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v13.3.1-1.1/xpack-arm-none-eabi-gcc-13.3.1-1.1-darwin-x64.tar.gz",
+        "archiveFileName": "xpack-arm-none-eabi-gcc-13.3.1-1.1-darwin-x64.tar.gz",
+        "checksum": "SHA-256:afd69764478275ee3e5b9a12d61250ae348a79a4d1fa767e5fa2762ae8b77b2a",
+        "size": "236453796"
+      },
+      {
+        "host": "arm64-apple-darwin",
+        "url": "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v13.3.1-1.1/xpack-arm-none-eabi-gcc-13.3.1-1.1-darwin-arm64.tar.gz",
+        "archiveFileName": "xpack-arm-none-eabi-gcc-13.3.1-1.1-darwin-arm64.tar.gz",
+        "checksum": "SHA-256:e37c379cbc423353902aada84b2b4d5a9316c2c8746c9608e69c8ac23e654aa3",
+        "size": "232517341"
+      },
+      {
+        "host": "x86_64-pc-linux-gnu",
+        "url": "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v13.3.1-1.1/xpack-arm-none-eabi-gcc-13.3.1-1.1-linux-x64.tar.gz",
+        "archiveFileName": "xpack-arm-none-eabi-gcc-13.3.1-1.1-linux-x64.tar.gz",
+        "checksum": "SHA-256:006c89337eced277fdf4c1c3bf3aebe55c85e8d52cba8d412009717fb781b959",
+        "size": "240386667"
+      },
+      {
+        "host": "aarch64-linux-gnu",
+        "url": "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v13.3.1-1.1/xpack-arm-none-eabi-gcc-13.3.1-1.1-linux-arm64.tar.gz",
+        "archiveFileName": "xpack-arm-none-eabi-gcc-13.3.1-1.1-linux-arm64.tar.gz",
+        "checksum": "SHA-256:34fa25d7dcd57bfdd3aeff5c595eac20dbf21a2d84b72e6c2db3bc67d556a1af",
+        "size": "237557810"
+      },
+      {
+        "host": "arm-linux-gnueabihf",
+        "url": "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v13.3.1-1.1/xpack-arm-none-eabi-gcc-13.3.1-1.1-linux-arm.tar.gz",
+        "archiveFileName": "xpack-arm-none-eabi-gcc-13.3.1-1.1-linux-arm.tar.gz",
+        "checksum": "SHA-256:4599172754809efaca49fb27f3b4e3c6622bd172d5240f0b9f412cc9d4f05e04",
+        "size": "230812731"
+      }
+    ]
+  },
+  {
+    "name": "python3",
+    "version": "3.12.14",
+    "systems": [
+      {
+        "host": "x86_64-mingw32",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.12.14%2B20260901-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+        "archiveFileName": "cpython-3.12.14+20260901-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+        "checksum": "SHA-256:7c45c9622400d578709a9b2cddbe8124cc21d382409d9f13406d706d28e31b14",
+        "size": "21980728"
+      },
+      {
+        "host": "i686-mingw32",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.12.14%2B20260901-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+        "archiveFileName": "cpython-3.12.14+20260901-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+        "checksum": "SHA-256:7c45c9622400d578709a9b2cddbe8124cc21d382409d9f13406d706d28e31b14",
+        "size": "21980728"
+      },
+      {
+        "host": "x86_64-apple-darwin",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.12.14%2B20260901-x86_64-apple-darwin-install_only_stripped.tar.gz",
+        "archiveFileName": "cpython-3.12.14+20260901-x86_64-apple-darwin-install_only_stripped.tar.gz",
+        "checksum": "SHA-256:65b195c9cedc1fef6767f044f9822069adbd1bd9204d424ece4628776fdc04bb",
+        "size": "24686153"
+      },
+      {
+        "host": "arm64-apple-darwin",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.12.14%2B20260901-aarch64-apple-darwin-install_only_stripped.tar.gz",
+        "archiveFileName": "cpython-3.12.14+20260901-aarch64-apple-darwin-install_only_stripped.tar.gz",
+        "checksum": "SHA-256:81a359f1cfadd4da11766534c5913791cea55f26e1bb902cacd2a531bb1e4b2b",
+        "size": "24981445"
+      },
+      {
+        "host": "x86_64-pc-linux-gnu",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.12.14%2B20260901-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+        "archiveFileName": "cpython-3.12.14+20260901-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+        "checksum": "SHA-256:72748da13197c1fb161e3afeef20a6a385ff24f2165e6e2758e47008e7faba4c",
+        "size": "34143368"
+      },
+      {
+        "host": "aarch64-linux-gnu",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.12.14%2B20260901-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz",
+        "archiveFileName": "cpython-3.12.14+20260901-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz",
+        "checksum": "SHA-256:577b4bec0793ad1ff0cbff9adbd0df078eddde38a4c41bf5d83ad381a85ee39d",
+        "size": "29199399"
+      },
+      {
+        "host": "arm-linux-gnueabihf",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.12.14%2B20260901-armv7-unknown-linux-gnueabihf-install_only_stripped.tar.gz",
+        "archiveFileName": "cpython-3.12.14+20260901-armv7-unknown-linux-gnueabihf-install_only_stripped.tar.gz",
+        "checksum": "SHA-256:435fd7613aada18b115377d5968fd6564cebb8b61c3d0b3ea240622b3340b7eb",
+        "size": "25618947"
+      }
+    ]
+  }
+]
