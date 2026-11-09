@@ -12,6 +12,36 @@
         {
           "name": "Neuro N6",
           "architecture": "stm32n6",
+          "version": "0.1.4",
+          "category": "Contributed",
+          "help": {
+            "online": "https://github.com/ohmlab-ltd/Neuro-N6-Arduino-Core"
+          },
+          "url": "https://github.com/ohmlab-ltd/Neuro-N6-Arduino-Core/releases/download/v0.1.4/stm32n6-0.1.4.zip",
+          "archiveFileName": "stm32n6-0.1.4.zip",
+          "checksum": "SHA-256:916ebd773a889ac96c9638f197bd2468f089e9a46b6ff1670c4dbeb473d3cc11",
+          "size": "29975799",
+          "boards": [
+            {
+              "name": "Neuro N6"
+            }
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "Ohmlab",
+              "name": "xpack-arm-none-eabi-gcc",
+              "version": "13.3.1-1.1"
+            },
+            {
+              "packager": "Ohmlab",
+              "name": "python3",
+              "version": "3.12.14"
+            }
+          ]
+        },
+        {
+          "name": "Neuro N6",
+          "architecture": "stm32n6",
           "version": "0.1.3",
           "category": "Contributed",
           "help": {

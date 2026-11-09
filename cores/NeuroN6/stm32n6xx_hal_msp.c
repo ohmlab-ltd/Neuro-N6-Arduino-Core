@@ -29,6 +29,14 @@ void HAL_MspInit(void)
   HAL_PWREx_EnableVddIO4();
   HAL_PWREx_ConfigVddIORange(PWR_VDDIO4, PWR_VDDIO_RANGE_3V3);
 }
+
+/* The smallest IC divider that brings pll_hz to max_hz or under. */
+static uint32_t ic_divider(uint32_t pll_hz, uint32_t max_hz)
+{
+  uint32_t div = (pll_hz + max_hz - 1u) / max_hz;
+  return (div < 1u) ? 1u : ((div > 256u) ? 256u : div);
+}
+
 void HAL_DCMIPP_MspInit(DCMIPP_HandleTypeDef* hdcmipp)
 {
   RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
@@ -52,18 +60,21 @@ void HAL_DCMIPP_MspInit(DCMIPP_HandleTypeDef* hdcmipp)
     HAL_NVIC_SetPriority(CSI_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(CSI_IRQn);
 
+    /* RM0486 limits: pixel clock 333 MHz, CSI D-PHY configuration clock 20 MHz.
+     * IC17 = PLL1 / 3 = 266.7 MHz, 5 % under the limit for the HSI's tolerance;
+     * IC18 = crystal PLL4 / 20 = 20 MHz. Not PLL3: NeuroN6-Powersave stops it. */
     PeriphClkInitStruct.PeriphClockSelection       = RCC_PERIPHCLK_DCMIPP;
     PeriphClkInitStruct.DcmippClockSelection       = RCC_DCMIPPCLKSOURCE_IC17;
     PeriphClkInitStruct.ICSelection[RCC_IC17].ClockSelection = RCC_ICCLKSOURCE_PLL1;
-    PeriphClkInitStruct.ICSelection[RCC_IC17].ClockDivider   = 4;
+    PeriphClkInitStruct.ICSelection[RCC_IC17].ClockDivider   = ic_divider(HAL_RCCEx_GetPLL1CLKFreq(), 317000000u);
     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
     {
       Error_Handler();
     }
 
     PeriphClkInitStruct.PeriphClockSelection       = RCC_PERIPHCLK_CSI;
-    PeriphClkInitStruct.ICSelection[RCC_IC18].ClockSelection = RCC_ICCLKSOURCE_PLL1;
-    PeriphClkInitStruct.ICSelection[RCC_IC18].ClockDivider   = 50;
+    PeriphClkInitStruct.ICSelection[RCC_IC18].ClockSelection = RCC_ICCLKSOURCE_PLL4;
+    PeriphClkInitStruct.ICSelection[RCC_IC18].ClockDivider   = ic_divider(HAL_RCCEx_GetPLL4CLKFreq(), 20000000u);
     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
     {
       Error_Handler();

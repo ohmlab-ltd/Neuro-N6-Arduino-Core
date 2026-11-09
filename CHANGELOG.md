@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.4 (2026-11-09)
+
+- Camera clocks: pixel clock 266.7 MHz (was 200 MHz); CSI D-PHY
+  configuration clock 20 MHz from the crystal (was 16 MHz from the HSI).
+
 ## 0.1.3
 
 First public release.

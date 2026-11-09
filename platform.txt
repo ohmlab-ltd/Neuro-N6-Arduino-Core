@@ -1,5 +1,5 @@
 name=Ohm Lab Neuro N6 (STM32N6)
-version=0.1.3
+version=0.1.4
 
 # GCC 11 or later: the linker script uses the READONLY keyword. A manual clone
 # sets compiler.path= in platform.local.txt to use the compiler on PATH.
