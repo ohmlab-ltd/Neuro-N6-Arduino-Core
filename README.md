@@ -3,7 +3,7 @@
 Arduino core for the Ohm Lab [Neuro N6](https://neuron6.com), an STM32N657
 board with a Neural-ART NPU.
 
-Version 0.1.3. Guide: [TUTORIAL.md](TUTORIAL.md). Changes:
+Version 0.1.4. Guide: [TUTORIAL.md](TUTORIAL.md). Changes:
 [CHANGELOG.md](CHANGELOG.md).
 
 ## Board
@@ -32,8 +32,9 @@ Version 0.1.3. Guide: [TUTORIAL.md](TUTORIAL.md). Changes:
    *Tools > Port*.
 
 - The compiler (xpack GCC 13.3.1) and Python 3.12 install with the core.
-- Linux: the install adds a udev rule. If it could not, run
-  `sudo ./post_install.sh` in `~/.arduino15/packages/Ohmlab/hardware/stm32n6/0.1.3`.
+- Linux: the Boards Manager does not run a third-party core's install script,
+  so add the board's udev rule once with `sudo ./post_install.sh` in
+  `~/.arduino15/packages/Ohmlab/hardware/stm32n6/0.1.4`.
 - [ST Edge AI Core](https://www.st.com/en/development-tools/stedgeai-core.html)
   4.0 is needed for `#pragma neuron6`. The build finds it in ST's default
   folder, or in `NEURON6_STEDGEAI`, set to the `stedgeai` executable.
@@ -115,7 +116,7 @@ does not enter the bootloader, double-tap reset.
 
 The core needs bootloader v2.6.1 or newer; the upload prints the version on
 the board. To update it, download `Neuro-N6-FSBL-v2.6.2-Trusted.bin` from the
-[latest release](https://github.com/ohmlab-ltd/Neuro-N6-Arduino-Core/releases/latest)
+[v0.1.3 release](https://github.com/ohmlab-ltd/Neuro-N6-Arduino-Core/releases/tag/v0.1.3)
 and, in the core's folder, run:
 
 ```

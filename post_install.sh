@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Copyright (c) 2026 Ohm Lab Ltd.
 # SPDX-License-Identifier: MIT
-# Linux only. Installs the udev rule for the Neuro N6. Boards Manager runs it
-# after an install. On a clone:  sudo ./post_install.sh
+# Linux only. Installs the udev rule for the Neuro N6. The Boards Manager does
+# not run it for a third-party core, so run it by hand:  sudo ./post_install.sh
 set -u
 
 SELF="$(cd "$(dirname "$0")" && pwd)/$(basename "$0")"

@@ -31,7 +31,7 @@
   carrier's display.
 
   Hardware: Neuro N6 with the MAYA-W476 wireless module and an OV5640 camera
-  on the TFT carrier.
+  on the TFT carrier. On any other carrier, use WiFiVideoStream.
 
   This example code is licensed under AGPL-3.0. See the notice above.
 */
